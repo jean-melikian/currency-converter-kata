@@ -4,8 +4,11 @@ import fr.ozoneprojects.currencyconverter.datasources.CurrenciesDataSource
 import fr.ozoneprojects.currencyconverter.datasources.CurrenciesResponseEntity
 import fr.ozoneprojects.currencyconverter.datasources.Mapper
 import fr.ozoneprojects.currencyconverter.exceptions.ResponseFailure
+import javax.inject.Inject
 
-class CurrenciesRepositoryImpl(
+class CurrenciesRepositoryImpl
+@Inject
+constructor(
     private val dataSource: CurrenciesDataSource,
     private val mapper: Mapper<CurrenciesResponseEntity, Map<String, Currency>>
 ) : CurrenciesRepository {
